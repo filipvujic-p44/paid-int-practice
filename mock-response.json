@@ -1,0 +1,13 @@
+// 200 OK carrier response
+{
+    "status": true,
+    "quote_num": "153616346",
+    "billed": 347.48,
+    "transit_time": "7"
+}
+
+// 400 Error carrier response
+{
+    "status": false,
+    "error_msg": "Some error occured"
+}

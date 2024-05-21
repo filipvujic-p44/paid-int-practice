@@ -25,11 +25,15 @@
             <#rt>
         </#list>
     ],
-    <#assign accessorialCodes = []>
-    <#if p44.directlyCodedAccessorialServices?has_content>
-    <#list p44.directlyCodedAccessorialServices as acc>
-        <#assign accessorialCodes = accessorialCodes + [acc.code]>
-    </#list>
+    "accessorial_charges":[
+        <#if p44.directlyCodedAccessorialServices?has_content>
+        <#list p44.directlyCodedAccessorialServices as acc>
+            {
+                "type":"${(acc.code)!}"
+            }<#sep>,
+            <#rt>
+        </#list>
+    ]
 }
 
 

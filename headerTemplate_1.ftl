@@ -3,6 +3,6 @@
     {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "api-key":"my-api-key"
+        "x-api-key":"${p44.vendorAuthentication.credential2!}"
     }
 </#compress>

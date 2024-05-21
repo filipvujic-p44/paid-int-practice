@@ -12,7 +12,7 @@
     "line_items": [
         <#list p44.lineItems as item>
         {
-            "pallets": "${(item.packageDimensions.totalPackages)!0}",
+            "pallets": "${(item.totalPackages)!0}",
             "lenght": "${(item.packageDimensions.length)!0}",
             "width": "${(item.packageDimensions.width)!0}",
             "height": "${(item.packageDimensions.height)!0}",

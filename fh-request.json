@@ -1,0 +1,119 @@
+{
+    "vendorAuthentication": {
+        "username1": "uname",
+        "credential1": "pwd",
+        "credential2": "some-key"
+    },
+    "testMode": true,
+    "vendorAccountSettings": {
+        "paymentTerms": "PREPAID",
+        "direction": "THIRD_PARTY",
+        "billToLocation": {
+            "address": {
+                "addressLines": [
+                    "PO BOX 8001"
+                ],
+                "city": "STERLING HEIGHTS",
+                "state": "MI",
+                "postalCode": "48311",
+                "country": "US"
+            },
+            "contact": {
+                "companyName": "SUNBELT RENTALS EDI",
+                "contactName": "NA",
+                "email": "FREIGHTBILLS@NANDC.COM",
+                "phoneNumber": {
+                    "countryCode": null,
+                    "areaCode": "555",
+                    "centralOfficeCode": "555",
+                    "stationCode": "5555",
+                    "subscriberNumber": null,
+                    "extension": ""
+                },
+                "phoneNumber2": null,
+                "faxNumber": null
+            }
+        }
+    },
+    "originAddress": {
+        "addressLines": [
+            "902-840 Edgewater"
+        ],
+        "city": "Sioux City",
+        "state": "IA",
+        "postalCode": "51109",
+        "country": "US"
+    },
+    "destinationAddress": {
+        "addressLines": [
+            "30 W Brookings St"
+        ],
+        "city": "Sioux Falls",
+        "state": "SD",
+        "postalCode": "57104",
+        "country": "US"
+    },
+    "lineItems": [
+        {
+            "freightClass": "85",
+            "totalWeight": 110,
+            "packageDimensions": {
+                "length": 48.00,
+                "width": 48.00,
+                "height": 48.00
+            },
+            "packageType": "PLT",
+            "totalPackages": 1,
+            "totalPieces": 1,
+            "description": "PARTS",
+            "stackable": false
+        },
+        {
+            "freightClass": "100",
+            "totalWeight": 90,
+            "packageDimensions": {
+                "length": 88.00,
+                "width": 35.00,
+                "height": 48.00
+            },
+            "packageType": "PLT",
+            "totalPackages": 1,
+            "totalPieces": 1,
+            "description": "PARTS",
+            "stackable": false
+        }
+    ],
+    "handlingUnits": [],
+    "directlyCodedAccessorialServices": [
+        {
+          "code": "appointment_for_delivery"
+        },
+        {
+          "code": "liftgate_pickup"
+        }
+      ],
+    "indirectlyCodedAccessorialServices": [
+        {
+          "code": "appointment_for_pick_up"
+        }
+    ],
+    "pickupWindow": {
+        "date": "2024-04-22",
+        "startTime": "07:00:00",
+        "endTime": "16:00:00",
+        "timeZoneId": "America/Chicago"
+    },
+    "deliveryWindow": {
+        "date": "2021-05-30",
+        "startTime": "07:00:00",
+        "endTime": "16:00:00",
+        "timeZoneId": "America/Chicago"
+    },
+    "weightUnit": "lbs",
+    "lengthUnit": "in",
+    "totalLinearFeet": 4,
+    "mode": "LTL",
+    "fetchAllServiceLevels": true,
+    "preferredCurrency": "USD",
+    "preferredSystemOfMeasurement": null
+  }

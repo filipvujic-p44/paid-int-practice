@@ -17,6 +17,7 @@
 	<#return node?? && node?has_content && node?trim?has_content>
 </#function>
 
+<#--  ova funkcija je visak, kad kopiras stvari od nekud, proveri sta se stvarno koristi i pobrisi visak  -->
 <#function resolveServiceCode node>
 	<#if node?has_content>
 		<#if node == "Standard">
@@ -32,6 +33,7 @@
 <#if !hasContent(cpString)>
 	{
 		"rateQuotes": [],
+		<#--  ne vracamo ovo polje freighthubu, ne treba da se stavlja  -->
         "status":"${(cp.status)!}"
 		"infoMessages": [],
 		"warningMessages": [],
@@ -44,6 +46,7 @@
 <#elseif !(${(cp.status)!})>
 	{
 		"rateQuotes": [],
+		<#--  ne vracamo ovo polje freighthubu, ne treba da se stavlja  -->
         "status":"${(cp.status)!}"
 		"infoMessages": [],
 		"warningMessages": [],
@@ -76,6 +79,7 @@
                 "errorMessages":[]
             }
         ],
+		<#--  ne vracamo ovo polje freighthubu, ne treba da se stavlja  -->
         "status":"${(cp.status)!}"     <!-- not sure if this field should be here -->
         "infoMessages":[],
         "warningMessages":[],

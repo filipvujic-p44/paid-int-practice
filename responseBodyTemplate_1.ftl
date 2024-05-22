@@ -28,12 +28,12 @@
 		}]
 	}
 	<#--  only removed for local testing  -->
-<#elseif cpStatus != "200">
+<#elseif $(cp.status) != true>
 	{
 		"infoMessages": [],
 		"warningMessages": [],
 		"errorMessages": [{
-			"ourCode": "VENDOR_IMAGE_GENERAL",
+			"ourCode": "VENDOR_RATING_GENERAL",
 			"message": "${(cp.error_msg)!}"
 		}]
 	}

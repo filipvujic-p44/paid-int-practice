@@ -1,0 +1,239 @@
+{
+    "vendorAuthentication": {
+        "username1": "mrsmith1",
+        "credential1": null,
+        "credential2": "62624",
+        "credential3": null,
+        "accountNumber1": null,
+        "accountNumber2": null,
+        "accountFlag1": false
+    },
+    "testMode": false,
+    "vendorAccountSettings": {
+        "paymentTerms": null,
+        "direction": null,
+        "billToLocation": {
+            "address": {
+                "addressLines": [
+                    "Test"
+                ],
+                "city": "Test",
+                "state": "MN",
+                "postalCode": "55121",
+                "country": "US",
+                "stopName": null
+            },
+            "contact": {
+                "companyName": "Test",
+                "contactName": "Test",
+                "email": "test@test.com",
+                "phoneNumber": {
+                    "countryCode": null,
+                    "areaCode": "651",
+                    "centralOfficeCode": "234",
+                    "stationCode": "3282",
+                    "subscriberNumber": null,
+                    "extension": ""
+                },
+                "phoneNumber2": null,
+                "faxNumber": null
+            }
+        }
+    },
+    "carrierCode": "RUDE",
+    "organizationIdentifier": null,
+    "userIdentifier": null,
+    "userCompany": null,
+    "originLocation": {
+        "address": {
+            "addressLines": [
+                "Test"
+            ],
+            "city": "Test",
+            "state": "MN",
+            "postalCode": "55077",
+            "country": "US",
+            "stopName": null
+        },
+        "contact": {
+            "companyName": "Test",
+            "contactName": "Test",
+            "email": "test@test.com",
+            "phoneNumber": {
+                "countryCode": null,
+                "areaCode": "952",
+                "centralOfficeCode": "641",
+                "stationCode": "2231",
+                "subscriberNumber": null,
+                "extension": ""
+            },
+            "phoneNumber2": null,
+            "faxNumber": null
+        }
+    },
+    "destinationLocation": {
+        "address": {
+            "addressLines": [
+                "Test"
+            ],
+            "city": "Austin",
+            "state": "TX",
+            "postalCode": "78758",
+            "country": "US",
+            "stopName": null
+        },
+        "contact": {
+            "companyName": "Test",
+            "contactName": "Test",
+            "email": "test@test.com",
+            "phoneNumber": {
+                "countryCode": null,
+                "areaCode": "651",
+                "centralOfficeCode": "234",
+                "stationCode": "6000",
+                "subscriberNumber": null,
+                "extension": ""
+            },
+            "phoneNumber2": null,
+            "faxNumber": null
+        }
+    },
+    "requesterLocation": {
+        "address": {
+            "addressLines": [
+                "Test"
+            ],
+            "city": "Eagan",
+            "state": "MN",
+            "postalCode": "55121",
+            "country": "US",
+            "stopName": null
+        },
+        "contact": {
+            "companyName": "Test",
+            "contactName": "Test Test",
+            "email": "test@test.com",
+            "phoneNumber": {
+                "countryCode": null,
+                "areaCode": "651",
+                "centralOfficeCode": "234",
+                "stationCode": "3468",
+                "subscriberNumber": null,
+                "extension": ""
+            },
+            "phoneNumber2": null,
+            "faxNumber": null
+        }
+    },
+    "emergencyContact": {
+        "companyName": null,
+        "contactName": "Test Test",
+        "email": null,
+        "phoneNumber": {
+            "countryCode": null,
+            "areaCode": "651",
+            "centralOfficeCode": "234",
+            "stationCode": "3468",
+            "subscriberNumber": null,
+            "extension": ""
+        },
+        "phoneNumber2": null,
+        "faxNumber": null
+    },
+    "pickupWindow": {
+        "date": "2024-03-26",
+        "startTime": "06:00:00",
+        "endTime": "18:00:00",
+        "timeZoneId": "America/Chicago"
+    },
+    "deliveryWindow": {
+        "date": "2024-03-27",
+        "startTime": "06:00:00",
+        "endTime": "18:00:00",
+        "timeZoneId": "America/Chicago"
+    },
+    "lineItems": [
+        {
+            "freightClass": "125",
+            "totalWeight": 500,
+            "packageDimensions": {
+                "length": 60,
+                "width": 48,
+                "height": 40
+            },
+            "packageType": "PLT",
+            "totalPackages": 1,
+            "totalPieces": 1,
+            "description": "TEST",
+            "stackable": true,
+            "nmfcItemCode": null,
+            "nmfcSubCode": null,
+            "lineItemHazmatDetail": null,
+            "countryOfManufacture": null,
+            "harmonizedCode": null,
+            "totalValue": null,
+            "hazmatDetail": null
+        },
+        {
+            "freightClass": "125",
+            "totalWeight": 500,
+            "packageDimensions": {
+                "length": 60,
+                "width": 48,
+                "height": 40
+            },
+            "packageType": "PLT",
+            "totalPackages": 1,
+            "totalPieces": 1,
+            "description": "TEST",
+            "stackable": true,
+            "nmfcItemCode": null,
+            "nmfcSubCode": null,
+            "lineItemHazmatDetail": null,
+            "countryOfManufacture": null,
+            "harmonizedCode": null,
+            "totalValue": null,
+            "hazmatDetail": null
+        }
+    ],
+    "handlingUnitTypeQuantities": [],
+    "handlingUnits": [],
+    "enhancedHandlingUnits": [],
+    "shipmentIdentifiers": [
+        {
+            "type": "BILL_OF_LADING",
+            "value": "SW2899359"
+        },
+        {
+            "type": "PURCHASE_ORDER",
+            "value": "40475474"
+        },
+        {
+            "type": "CUSTOMER_REFERENCE",
+            "value": "SKYO-TEST"
+        }
+    ],
+    "directlyCodedAccessorialServices": [
+        {
+          "code": "NONCOM"
+        },
+        {
+          "code": "LIFT"
+        }
+      ],
+      "indirectlyCodedAccessorialServices": [
+        {
+          "code": "INSIDE"
+        }
+      ],
+    "pickupNote": null,
+    "deliveryNote": null,
+    "quoteNumber": null,
+    "weightUnit": "lbs",
+    "lengthUnit": "in",
+    "preScheduledPickup": false,
+    "pickupOnly": false,
+    "mode": "LTL",
+    "customsBrokerLocation": null,
+    "currencyCode": "USD"
+}

@@ -26,8 +26,9 @@
         </#list>
     ],
     "accessorial_charges":[
-        <#if p44.directlyCodedAccessorialServices?has_content>
-        <#list p44.directlyCodedAccessorialServices as acc>
+        <#assign list = p44.directlyCodedAccessorialServices + p44.indirectlyCodedAccessorialServices>
+        <#if list?has_content>
+        <#list list as acc>
             {
                 "type":"${(acc.code)!}"
             }<#sep>,

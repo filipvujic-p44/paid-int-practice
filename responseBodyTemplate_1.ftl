@@ -41,7 +41,7 @@
 		}]
 	}
 	<#--  only removed for local testing  -->
-<#elseif cpStatus != "200">
+<#elseif !(${(cp.status)!})>
 	{
 		"rateQuotes": [],
         "status":"${(cp.status)!}"

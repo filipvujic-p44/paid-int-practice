@@ -11,7 +11,7 @@
             <#return contact.phoneNumber.areaCode?trim+"-"+contact.phoneNumber.centralOfficeCode?trim+"-"+contact.phoneNumber.stationCode?trim>
         </#if>
     </#if>
-    <#return contact.phoneNumber2!>
+    <#return contact.phoneNumber2!"">
 </#function>
 
 <#function formatTime time>

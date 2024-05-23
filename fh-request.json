@@ -1,0 +1,295 @@
+{
+    "vendorAuthentication": {
+        "username1": "1744API",
+        "credential1": null,
+        "credential2": "CfDJ8IN3HIVFLOJNp8FauoANGShASfe4ITMV9uWVMrYzn-CI9GaaLv-tvNKmyaJpQVSm6lnbNHnIWpME4tGtGKc9n7kIOZPJ7N-kocDWVMa4YOe4-dw4toRYzLpGPJ-Oj9egxsyVw_-q4cC-T5OEVQu6GJEa8-hE4MnvYtjFS7SrvaXVqeDOVK2DnbWY_ZDVputdvfhiEokbe0TCEO5mFSNTPp1ZHEHSP-LKu_DUwnCmI_yh96McOuybdkAoaUYdb_Zl13XOX841Q9CSig5gyyaJbnYXugIws1nDK-05tweqeMZ1HjFaXYEQwe5e9tj23cmcjYy-HPJR5GgitoCr9nLuk2HxR3YVcNZEWohsT4vxzvw0GHJIbBBEs8Un4SRvtw3yu_V6Hl42WBc91OWRWbnn6JxgkdTAaroMEfzKEkKDitSbsbRjDOIKD5UpVukrhSo1X7vq6Pe-VdAzJut4dGg6BSWCq0bfG0Xzk89coLGVzXrwXBA_DFbsNNjiFdLnL5omq1HlCDD-JzKjn6Z1QdXE4RPWYoTJvbvNUQqhDwGQdF63-kn4pdfjlw05LsCNv5vlU3qRnAJeFDpPalezJmxsmtD1TqfLTQL67qudgwR1bB7UTBt1PU_0FTz3g2UbU9GrMAP9LgBnUYKcfNcU-QLdlXL3dsagAETm7YQ6zzM-fLhRnCYe6jE71mLZWINa8pkgJM6FrEDN20FO4qMkVJFx2heAB5CqSOsGjyZN8wqIrJf5h8zJynEqICgPT6W7iWERtcpUaKBthFzYdy73HyoiczVFHmELNjgOi-0pPknitIcaf8dhgyoq3ykKwgzeWmjf9dANjB9LOv-anwwCCPcBxo-93TG-vvsyE4_20yDTfGDq",
+        "credential3": null,
+        "accountNumber1": null,
+        "accountNumber2": null,
+        "accountFlag1": false
+    },
+    "testMode": true,
+    "vendorAccountSettings": {
+        "paymentTerms": "P",
+        "direction": "THIRD_PARTY",
+        "billToLocation": {
+            "address": {
+                "addressLines": [
+                    "123 Test Avenue",
+                    "Suite 300"
+                ],
+                "city": "Testville",
+                "state": "TX",
+                "postalCode": "54321",
+                "country": "US"
+            },
+            "contact": {
+                "companyName": "TestCorp",
+                "contactName": "John Doe",
+                "email": "john.doe@testcorp.com",
+                "phoneNumber": {
+                    "countryCode": null,
+                    "areaCode": "123",
+                    "centralOfficeCode": "456",
+                    "stationCode": "7890",
+                    "subscriberNumber": null,
+                    "extension": null
+                },
+                "phoneNumber2": null,
+                "faxNumber": null
+            }
+        }
+    },
+    "carrierCode": "WTCH",
+    "organizationIdentifier": null,
+    "userIdentifier": null,
+    "userCompany": null,
+    "originLocation": {
+        "address": {
+          "addressLines": [
+            "2699 E 28th St #406"
+          ],
+          "city": "SIOUX FALLS",
+          "state": "SD",
+          "postalCode": "90755",
+          "country": "US"
+        },
+        "contact": {
+            "companyName": "Origin Location",
+            "contactName": "Jane Smith",
+            "email": "jane.smith@sampleinc.com",
+            "phoneNumber": {
+                "countryCode": null,
+                "areaCode": "555",
+                "centralOfficeCode": "123",
+                "stationCode": "4567",
+                "subscriberNumber": null,
+                "extension": ""
+            },
+            "phoneNumber2": "123 456 789",
+            "faxNumber": null
+        }
+    },
+    "destinationLocation": {
+        "address": {
+            "addressLines": [
+              "225 W. 3rd St."
+            ],
+            "city": "CRESTWOOD",
+            "state": "IL",
+            "postalCode": "90802",
+            "country": "US"
+        },
+        "contact": {
+            "companyName": "Destination Co",
+            "contactName": "Destination Contact",
+            "email": "destination@company.com",
+            "phoneNumber": {
+                "countryCode": null,
+                "areaCode": "999",
+                "centralOfficeCode": "888",
+                "stationCode": "7777",
+                "subscriberNumber": null,
+                "extension": ""
+            },
+            "phoneNumber2": null,
+            "faxNumber": null
+        }
+    },
+    "requesterLocation": {
+        "address": {
+            "addressLines": [
+                "101 Requester Blvd, Suite 100"
+            ],
+            "city": "Requesterville",
+            "state": "IN",
+            "postalCode": "54321",
+            "country": "US"
+        },
+        "contact": {
+            "companyName": "Request Inc",
+            "contactName": "Requester LTL",
+            "email": "request@requestinc.com",
+            "phoneNumber": {
+                "countryCode": null,
+                "areaCode": "777",
+                "centralOfficeCode": "555",
+                "stationCode": "1234",
+                "subscriberNumber": null,
+                "extension": ""
+            },
+            "phoneNumber2": null,
+            "faxNumber": null
+        }
+    },
+    "emergencyContact": {
+        "companyName": null,
+        "contactName": "Emergency Contact",
+        "email": null,
+        "phoneNumber": {
+            "countryCode": null,
+            "areaCode": "111",
+            "centralOfficeCode": "222",
+            "stationCode": "3333",
+            "subscriberNumber": null,
+            "extension": ""
+        },
+        "phoneNumber2": null,
+        "faxNumber": null
+    },
+    "pickupWindow": {
+        "date": "2024-04-25",
+        "startTime": "11:00:00",
+        "endTime": "16:00:00",
+        "timeZoneId": "America/New_York"
+    },
+    "deliveryWindow": {
+        "date": "2024-04-28",
+        "startTime": "08:00:00",
+        "endTime": "18:00:00",
+        "timeZoneId": "America/New_York"
+    },
+    "lineItems": [
+        {
+            "freightClass": "55",
+            "totalWeight": 2100,
+            "packageDimensions": {
+                "length": 37.0,
+                "width": 47.0,
+                "height": 57.0
+            },
+            "packageType": "PLT",
+            "totalPackages": 1,
+            "totalPieces": 1,
+            "description": "Sample Carton",
+            "stackable": false,
+            "nmfcItemCode": null,
+            "nmfcSubCode": null,
+            "lineItemHazmatDetail": null,
+            "countryOfManufacture": null,
+            "harmonizedCode": null,
+            "totalValue": null,
+            "hazmatDetail": null
+        },
+        {
+            "freightClass": "200",
+            "totalWeight": 400,
+            "packageDimensions": {
+                "length": 37.0,
+                "width": 47.0,
+                "height": 57.0
+            },
+            "packageType": "PLT",
+            "totalPackages": 1,
+            "totalPieces": 2,
+            "description": "Milk",
+            "stackable": false,
+            "nmfcItemCode": null,
+            "nmfcSubCode": null,
+            "lineItemHazmatDetail": null,
+            "countryOfManufacture": null,
+            "harmonizedCode": null,
+            "totalValue": null,
+            "hazmatDetail": null
+        }
+    ],
+    "handlingUnitTypeQuantities": [
+        {
+            "quantity": 5,
+            "handlingUnitType": "Box"
+        },
+        {
+            "quantity": 3,
+            "handlingUnitType": "Pallet"
+        }
+    ],
+    "handlingUnits": [],
+    "enhancedHandlingUnits": [
+        {
+            "packTypeCode": "Box",
+            "description": "Small Box",
+            "weight": 2.5,
+            "length": 10.0,
+            "width": 8.0,
+            "height": 5.0,
+            "freightClass": "Class A",
+            "stackable": true,
+            "itemLines": [
+                {
+                    "units": 4,
+                    "packTypeCode": "Box",
+                    "description": "Item 1"
+                },
+                {
+                    "units": 6,
+                    "packTypeCode": "Box",
+                    "description": "Item 2"
+                }
+            ]
+        },
+        {
+            "packTypeCode": "Pallet",
+            "description": "Large Pallet",
+            "weight": 50.0,
+            "length": 48.0,
+            "width": 40.0,
+            "height": 6.0,
+            "freightClass": "Class B",
+            "stackable": false,
+            "itemLines": [
+                {
+                    "units": 10,
+                    "packTypeCode": "Pallet",
+                    "description": "Item 3"
+                },
+                {
+                    "units": 15,
+                    "packTypeCode": "Pallet",
+                    "description": "Item 4"
+                }
+            ]
+        }
+    ],
+    "shipmentIdentifiers": [
+        {
+            "type": "BILL_OF_LADING",
+            "value": "D1234567-0-1"
+        },
+        {
+            "type": "PICKUP",
+            "value": "PICKUP_D1234567-0-1"
+        },
+        {
+            "type": "PRO",
+            "value": "PRO_D1234567-0-1"
+        },
+        {
+            "type": "PURCHASE_ORDER",
+            "value": "PO_D1234567-0-1"
+        },
+        {
+            "type": "CUSTOMER_REFERENCE",
+            "value": "987654"
+        }
+    ],
+    "directlyCodedAccessorialServices": [
+        {
+            "code": "liftgate-pickup"
+        },
+        {
+            "code": "liftgate-delivery"
+        }
+    ],
+    "indirectlyCodedAccessorialServices": [],
+    "pickupNote": "Note for pickup",
+    "deliveryNote": "Note for delivery",
+    "quoteNumber": "789",
+    "weightUnit": "lbs",
+    "lengthUnit": "in",
+    "preScheduledPickup": false,
+    "pickupOnly": false,
+    "mode": "LTL",
+    "customsBrokerLocation": null,
+    "currencyCode": null,
+    "totalLinearFeet": 25
+}

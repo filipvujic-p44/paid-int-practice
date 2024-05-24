@@ -1,5 +1,15 @@
 <#compress>
-<#assign p44 = interactionRecord[0].requestBody>
+<#assign p44 = interactionRecords[0].requestBody>
+
+<#function formatTime time="">
+    <#if time?has_content>
+        <#local hours = time?split(":")[0]>
+        <#local minutes = time?split(":")[1]>
+        <#return hours + ":" + minutes + "h">
+    </#if>
+    <#return "">    
+</#function>
+
 <#function hasContent node>
     <#return node?has_content && node?trim != "">
 </#function>
@@ -14,15 +24,6 @@
     <#return contact.phoneNumber2!"">
 </#function>
 
-<#function formatTime time>
-    <#if time?has_content>
-        <#local hours = time?split(":")[0]>
-        <#local minutes = time?split(":")[1]>
-        <#return hours + ":" + minutes + "h">
-    </#if>
-    <#return "">    
-</#function>
-
 <#function BOL_value identifiers = "">
     <#if identifiers?has_content>
         <#list identifiers as item>
@@ -34,36 +35,37 @@
     <#return "">
 </#function>
 
-<#function PONUM_value identifiers>
+<#function PONUM_value identifiers = "">
     <#if identifiers?has_content>
         <#list identifiers as item>
             <#if item.type == "PURCHASE_ORDER">
                 <#return item.value>
             </#if>
         </#list>
+    </#if>
     <#return "">
 </#function>
 {
     "pickup_date": "${(p44.pickupWindow.date)}",
-    "ready_by_time": "${(formatTime(p44.requesterLocation.pickupWindow.startTime)!)!}",<#-- convert time -->
-    "closing_time": "${(formatTime(p44.requesterLocation.pickupWindow.endTime)!)!}",<#-- convert time -->
+    "ready_by_time": "${(formatTime(p44.pickupWindow.startTime)!)}", 
+    "closing_time": "${(formatTime(p44.pickupWindow.endTime)!)}",
     "shipper_name": "${(p44.originLocation.contact.companyName)!}",
     "shipper_address": "${(p44.originLocation.address.addressLines[0])!}",
     "shipper_city": "${(p44.originLocation.address.city)!}",
     "shipper_state": "${(p44.originLocation.address.state)!}",
     "shipper_zip": "${(p44.originLocation.address.postalCode)!}",
     "shipper_contact": "${(p44.originLocation.address.contact.email)!}",
-    "shipper_phone": "${extractPhoneNumber((p44.originLocation.contact)!)!}",<#-- napravi fju da konvertuje -->
+    "shipper_phone": "${extractPhoneNumber((p44.originLocation.contact))!}", 
     "consignee_name": "${(p44.destinationLocation.contact.companyName)!}",
     "consignee_address": "${(p44.destinationLocation.address.addressLines[0])!}",
     "consignee_city": "${(p44.destinationLocation.address.city)!}",
     "consignee_state": "${(p44.destinationLocation.address.state)!}",
     "consignee_zip": "${(p44.destinationLocation.address.postalCode)!}",
     "consignee_contact": "${(p44.destinationLocation.contact.email)!}",
-    "consignee_phone": "${extractPhoneNumber((p44.destinationLocation.contact)!)!}",<#-- napravi fju da konvertuje -->
-    "bol": "${(BOL_value(p44.shipmentIdentifiers))!}",<#-- ${(p44.shipmentIdentifiers[0].value)!} -->
-    "ponum": "${(PONUM_value(p44.shipmentIdentifiers))!}",<#-- ${(p44.shipmentIdentifiers[1].value)!} -->
-    "quote_num": ${(p44.quoteNumber)!},
+    "consignee_phone": "${extractPhoneNumber((p44.destinationLocation.contact))!}",
+    "bol": "${(BOL_value(p44.shipmentIdentifiers))!}",
+    "ponum": "${(PONUM_value(p44.shipmentIdentifiers))!}",
+    "quote_num": ${(p44.quoteNumber)!0},
     "comments": "${(p44.pickupNote)!}",
    
     "line_items": [
@@ -74,19 +76,19 @@
                 "width": "${(item.packageDimensions.width)!0}",
                 "height": "${(item.packageDimensions.height)!0}",
                 "weight": "${(item.totalWeight)!0}",
-                "stackable": "${(item.stackable)!}",
+                "stackable": "${((item.stackable)?string("true", "false"))!}",
                 "freight_class_code": "${(item.freightClass)!}",
                 "packageType": "${(item.packageType)!}",
                 "description": "${(item.description)!}"
             }<#sep>,
             <#rt>
         </#list>
-    ]
+    ],
     <#assign accessorials = p44.directlyCodedAccessorialServices + p44.indirectlyCodedAccessorialServices>
     "accessorial_charges": [
         <#list accessorials as item>
             {
-                "type": "${(accessorials.code)!}"
+                "type": "${(item.code)!}"
             }<#sep>,
             <#rt>
         </#list>

@@ -4,7 +4,7 @@
 {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "api-key": "${(p44.vendorAuthentication.credential2)!}"
+    <#--  "api-key": "${"bearer " + (p44.vendorAuthentication.credential2)!}"  -->
 }
 
 </#compress>

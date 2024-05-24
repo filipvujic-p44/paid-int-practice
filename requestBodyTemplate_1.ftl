@@ -17,7 +17,7 @@
                 "width": "${(item.packageDimensions.width)!0.0}",
                 "height": "${(item.packageDimensions.height)!0.0}",
                 "weight": "${(item.totalWeight)!0}",
-                "stackable": "${(item.stackable)!}",    <!-- not sure about null check -->
+                "stackable": "${(item.stackable)!false}",    <!-- not sure about null check -->
                 "freight_class_code": "${(item.freightClass)!}",
                 "packageType": "${(item.packageType)!}",
                 "description": "${(item.description)!}"
@@ -30,12 +30,11 @@
         <#if list?has_content>
         <#list list as acc>
             {
-                "type":"${(acc.code)!}"
+                "type": "${(acc.code)!}"
             }<#sep>,
             <#rt>
         </#list>
     ]
 }
-
 
 </#compress>

@@ -32,7 +32,6 @@
 <#if !hasContent(cpString)>
 	{
 		"rateQuotes": [],
-        "status":"${(cp.status)!}"
 		"infoMessages": [],
 		"warningMessages": [],
 		"errorMessages": [{
@@ -41,45 +40,43 @@
 		}]
 	}
 	<#--  only removed for local testing  -->
-<#elseif !(${(cp.status)!})>
+<#--  <#elseif !(${(cp.status)!})>
 	{
 		"rateQuotes": [],
-        "status":"${(cp.status)!}"
 		"infoMessages": [],
 		"warningMessages": [],
 		"errorMessages": [{
 			"ourCode": "VENDOR_RATING_GENERAL",
-			"message": "${(cp.message)!}"
+			"message": "${(cp.error_msg)!}"
 		}]
-	}
+	}  -->
 <#else>
     {
-        "rateQuotes":[
+        "rateQuotes": [
             {
-                "carrierCode":"RTTA",
-                "quoteNumber":"${(cp.quote_num)!0}",
-                "serviceLevel":{},
-                "transitDays":"${(cp.transit_time)!0}",
-                "deliveryDateTime":{},
-                "rateQuoteDetail":{
-                    "total":"${(cp.billed)!0.0}",
-                    "charges":[]
+                "carrierCode": "RTTA",
+                "quoteNumber": "${(cp.quote_num)!0}",
+                "serviceLevel": {},
+                "transitDays": "${(cp.transit_time)!0}",
+                "deliveryDateTime": {},
+                "rateQuoteDetail": {
+                    "total": "${(cp.billed)!0.0}",
+                    "charges": []
                 },
-                "alternateRateQuotes":[],
-                "originTerminal":{},
-                "destinationTerminal":{},
-                "quoteEffectiveDateTime":{},
-                "quoteExpirationDateTime":{},
-                "unacceptedAccessorialServiceCodes":[],
-                "infoMessages":[],
-                "warningMessages":[],
-                "errorMessages":[]
+                "alternateRateQuotes": [],
+                "originTerminal": {},
+                "destinationTerminal": {},
+                "quoteEffectiveDateTime": {},
+                "quoteExpirationDateTime": {},
+                "unacceptedAccessorialServiceCodes": [],
+                "infoMessages": [],
+                "warningMessages": [],
+                "errorMessages" :[]
             }
         ],
-        "status":"${(cp.status)!}"     <!-- not sure if this field should be here -->
-        "infoMessages":[],
-        "warningMessages":[],
-        "errorMessages":[]
+        "infoMessages": [],
+        "warningMessages": [],
+        "errorMessages": []
     }
 
 </#if>

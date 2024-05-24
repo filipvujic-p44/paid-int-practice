@@ -12,15 +12,12 @@
     "line_items": [
         <#list p44.lineItems as item>
             {
-                <#--  dobro je, treba totalPackages ovde  -->
-                "pallets": "${(item.totalPackages)!0}",     <!-- not sure about totalPackages field -->
-                <#--  zavisi od kerijerovog apija, ali u principu uglavnom ne moras double ako vracas 0  -->
-                <#--  takodje, nekad je string, nekad int, nekad svejedno, zavisi od apija, ali ovo je skroz tacno  -->
+                "pallets": "${(item.totalPackages)!0}",
                 "length": "${(item.packageDimensions.length)!0.0}",
                 "width": "${(item.packageDimensions.width)!0.0}",
                 "height": "${(item.packageDimensions.height)!0.0}",
                 "weight": "${(item.totalWeight)!0}",
-                "stackable": "${(item.stackable)!}",    <!-- not sure about null check -->
+                "stackable": "${(item.stackable?string('true', 'false'))!}",
                 "freight_class_code": "${(item.freightClass)!}",
                 "packageType": "${(item.packageType)!}",
                 "description": "${(item.description)!}"
@@ -31,12 +28,13 @@
     "accessorial_charges":[
         <#assign list = p44.directlyCodedAccessorialServices + p44.indirectlyCodedAccessorialServices>
         <#if list?has_content>
-        <#list list as acc>
-            {
-                "type": "${(acc.code)!}"
-            }<#sep>,
-            <#rt>
-        </#list>
+            <#list list as acc>
+                {
+                    "type": "${(acc.code)!}"
+                }<#sep>,
+                <#rt>
+            </#list>
+        </#if>
     ]
 }
 

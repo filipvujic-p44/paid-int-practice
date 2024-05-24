@@ -29,7 +29,7 @@
 			"message": ""
 		}]
 	}
-<#elseif !(${(cp.status)!})>
+<#--  <#elseif !(${(cp.status)!})>
 	{
 		"rateQuotes": [],
 		"infoMessages": [],
@@ -38,7 +38,7 @@
 			"ourCode": "VENDOR_DISPATCH_GENERAL",
 			"message": "${(cp.error_msg)!}"
 		}]
-	}
+	}  -->
 <#else>
 {  
 	"shipmentIdentifiers": [

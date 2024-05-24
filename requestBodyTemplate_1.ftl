@@ -16,14 +16,27 @@
     <#return contact.phoneNumber2!"">
 </#function>
 
-<#list p44.shipmentIdentifiers as identifier>
-    <#if identifier.type == "BILL_OF_LADING">
-        <#assign bol = identifier.value>
+<#function bol>
+    <#if p44.shipmentIdentifiers?has_content>
+        <#list p44.shipmentIdentifiers as identifier>
+            <#if identifier.type == "BILL_OF_LADING">
+                <#return identifier.value>
+            </#if>
+        </#list>
     </#if>
-    <#if identifier.type == "PURCHASE_ORDER">
-        <#assign ponum = identifier.value>
+    <#return null>
+</#function>
+
+<#function ponum>
+    <#if p44.shipmentIdentifiers?has_content>
+        <#list p44.shipmentIdentifiers as identifier>
+            <#if identifier.type == "PURCHASE_ORDER">
+                <#return identifier.value>
+            </#if>
+        </#list>
     </#if>
-</#list>
+    <#return null>
+</#function>
 
 {
     "pickup_date": "${(p44.pickupWindow.date)!}",
@@ -45,33 +58,37 @@
     "consignee_zip": "${(p44.destinationLocation.address.postalCode)!}",
     "consignee_contact": "${(p44.destinationLocation.contact.email)!}",
     "consignee_phone": "${extractPhoneNumber((p44.destinationLocation.contact)!)!}",
-    "bol": "${bol!}",
-    "ponum": "${ponum!}",
+    "bol": "${bol()!}",
+    "ponum": "${ponum()!}",
     "quote_num": "${(p44.quoteNumber)!}",
     "cod_amount_in_cents": 0,
     "comments": "${(p44.deliveryNote)!}",
     "line_items": [
-        {
-            "pallets": "${(p44.lineItems.totalPackages)!0}",
-            "length": "${(p44.lineItems.packageDimensions.length)!0.0}",
-            "width": "${(p44.lineItems.packageDimensions.width)!0.0}",
-            "height": "${(p44.lineItems.packageDimensions.height)!0.0}",
-            "weight": "${(p44.lineItems.totalWeight)!0}",
-            "stackable": "${(p44.lineItems.stackable)!}",
-            "freight_class_code": "${(p44.lineItems.freightClass)!}",
-            "packageType": "${(p44.lineItems.packageType)!}",
-            "description": "${(p44.lineItems.description)!}",
-        }
+        <#list p44.lineItems as item>
+            {
+                "pallets": "${(item.totalPackages)!0}",
+                "length": "${(item.packageDimensions.length)!0.0}",
+                "width": "${(item.packageDimensions.width)!0.0}",
+                "height": "${(item.packageDimensions.height)!0.0}",
+                "weight": "${(item.totalWeight)!0}",
+                "stackable": "${(item.stackable?string('true', 'false'))!}",
+                "freight_class_code": "${(item.freightClass)!}",
+                "packageType": "${(item.packageType)!}",
+                "description": "${(item.description)!}"
+            }<#sep>,
+            <#rt>
+        </#list>
     ],
     "accessorial_charges": [
         <#assign list = p44.directlyCodedAccessorialServices + p44.indirectlyCodedAccessorialServices>
         <#if list?has_content>
         <#list list as acc>
             {
-                "type":"${(acc.code)!}"
+                "type": "${(acc.code)!}"
             }<#sep>,
             <#rt>
         </#list>
+        </#if>
     ]
 }
 

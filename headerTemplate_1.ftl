@@ -3,6 +3,6 @@
     {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Authorization":"${"bearer " + p44.vendorAuthentication.credential2}"
+        <#--  "Authorization":"${"bearer " + p44.vendorAuthentication.credential2}"  -->
     }
 </#compress>

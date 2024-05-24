@@ -17,19 +17,6 @@
 	<#return node?? && node?has_content && node?trim?has_content>
 </#function>
 
-<#--  ova funkcija je visak, kad kopiras stvari od nekud, proveri sta se stvarno koristi i pobrisi visak  -->
-<#function resolveServiceCode node>
-	<#if node?has_content>
-		<#if node == "Standard">
-			<#return "STD">
-		<#elseif node == "Guaranteed">
-			<#return "GUR">
-		</#if>
-	<#else>
-		<#return "">
-	</#if>
-</#function>
-
 <#if !hasContent(cpString)>
 	{
 		"rateQuotes": [],
@@ -44,7 +31,6 @@
 <#--  <#elseif !(${(cp.status)!})>
 	{
 		"rateQuotes": [],
-        "status":"${(cp.status)!}"
 		"infoMessages": [],
 		"warningMessages": [],
 		"errorMessages": [{
@@ -76,7 +62,6 @@
                 "errorMessages" :[]
             }
         ],
-        "status":"${(cp.status)!}"     <!-- not sure if this field should be here -->
         "infoMessages":[],
         "warningMessages":[],
         "errorMessages":[]

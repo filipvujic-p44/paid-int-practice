@@ -17,7 +17,7 @@
             "width": "${(item.packageDimensions.width)!0}",
             "height": "${(item.packageDimensions.height)!0}",
             "weight": "${(item.packageDimensions.weight)!0}",
-            "stackable": "${(item.stackable)!}",
+            "stackable": "${(item.stackable?string("true", "false"))!}",
             "freight_class_code": "${(item.freightClass)!}",
             "packageType": "${(item.packageType)!}",
             "description": "${(item.description)!""}"
@@ -25,7 +25,7 @@
         <#sep>,
         <#rt>
     </#list>
-    ]
+    ],
     "accessorial_charges": [
         <#assign accessorials = p44.directlyCodedAccessorialServices + p44.indirectlyCodedAccessorialServices>
         <#list accessorials as acc>

@@ -25,7 +25,7 @@
         }]
     }
     <#--  only removed for local testing  -->
-<#elseif $(cp.status) != true>
+<#elseif cp.status != true>
     {
         "infoMessages": [],
         "warningMessages": [],
@@ -45,7 +45,7 @@
                 "dateTime": ""
             },
             "rateQuoteDetail":{
-                "total": ${cp.billed!},
+                "total": ${cp.billed!}
             },
             "alternateRateQuotes":[],
             "originTerminal":{},

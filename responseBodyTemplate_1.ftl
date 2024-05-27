@@ -23,7 +23,7 @@
 			"message": ""
 		}]
 	}
-<#elseif !cp.status >
+<#elseif cp.status != true >
 	{
 		"rateQuotes": [],
 		"infoMessages": [],

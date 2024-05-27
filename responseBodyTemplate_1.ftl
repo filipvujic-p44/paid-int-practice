@@ -27,8 +27,7 @@
 			"message": ""
 		}]
 	}
-	<#--  only removed for local testing  -->
-<#--  <#elseif !(${(cp.status)!})>
+<#elseif cp.status != true>
 	{
 		"rateQuotes": [],
 		"infoMessages": [],
@@ -37,7 +36,7 @@
 			"ourCode": "VENDOR_RATING_GENERAL",
 			"message": "${(cp.error_msg)!}"
 		}]
-	}  -->
+	}
 <#else>
     {
         "rateQuotes": [

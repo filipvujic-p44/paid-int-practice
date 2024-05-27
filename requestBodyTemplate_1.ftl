@@ -16,7 +16,7 @@
                 "width": "${(item.packageDimensions.width)!0}",
                 "height": "${(item.packageDimensions.height)!0}",
                 "weight": "${(item.totalWeight)!0}",
-                "stackable": "${(item.stackable)!}",
+                "stackable": "${(item.stackable?string("true", "false"))!}",
                 "freight_class_code": "${(item.freightClass)!}",
                 "packageType": "${(item.packageType)!}",
                 "description": "${(item.description)!}"

@@ -1,0 +1,18 @@
+{
+    "vendorAuthentication": {
+        "username1": null,
+        "credential1": null,
+        "credential2": "token",
+        "credential3": null,
+        "accountNumber1": null,
+        "accountNumber2": null,
+        "accountFlag1": false
+    },
+    "testMode": true,
+    "shipmentIdentifier":
+        {
+            "type": "CUSTOMER_REFERENCE",
+            "value": "143496"
+        }
+    
+}

@@ -1,0 +1,55 @@
+{
+    "configKey": {
+        "mode": "LTL",
+        "service": "SHIPMENT_STATUS",
+        "interactionType": "CARRIER_PULL",
+        "entityId": "RTTA"
+    },
+    "shaKey": null,
+    "planVersion": 1628781968,
+    "updateTimestamp": 1628781968,
+    "processorStrategies": [
+        "CALL_ORCHESTRATOR_THREADED"
+    ],
+    "valueTranslations": null,
+    "interactions": [
+        {
+            "sequence": 1,
+            "metaData": {
+                "connectionType": "REST",
+                "httpMethod": "GET",
+                "contentType": "JSON",
+                "responseSchema": "INGESTION_EVENT_V0_29_0",
+                "rootNodeName": "cp",
+                "controlTemplate": {
+                    "templateName": "controlTemplate_1.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "uriTemplate": {
+                    "templateName": "uriTemplate_1.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "headerTemplate": {
+                    "templateName": "headerTemplate_1.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "requestBodyTemplate": {
+                    "templateName": "requestBodyTemplate_1.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "responseBodyTemplate": {
+                    "templateName": "responseBodyTemplate_1.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                }
+            },
+            "direction": "BOTH"
+        }
+    ],
+    "forcedCircuitBreakerState": null,
+    "planSupported": true
+}

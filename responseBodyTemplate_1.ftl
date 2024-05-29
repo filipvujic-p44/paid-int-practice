@@ -12,7 +12,7 @@
 	    <#return node?? && node?has_content && node?trim?has_content>
     </#function>
 
-      <#function removeMilisecundsFromDatetime datetime="1970-01-01T00:00:00Z">
+    <#function removeMilisecundsFromDatetime datetime="1970-01-01T00:00:00Z">
        <#if hasContent(datetime)>
             <#if datetime?contains(".")>
                 <#assign dotIndex = datetime?index_of(".")>
@@ -25,40 +25,25 @@
 
     <#if !cp?has_content >
         <@error ourCode="VENDOR_INVALID_RESPONSE" message=""/>
-    
-    <#--  treba proveriti slucajeve kada je request neuspesan. Te slucajeve, za divno cudo, nisam uspeo da proizvedem u postmenu  -->
-    
-    <#--  <#elseif cp.code?has_content>
-        <#if cp.code=="internal_server_error" >
-            <@error ourCode="VENDOR_TIMEOUT" message=cp.message!""/>
-        <#elseif cp.code=="request_unauthorized" >
-            <@error ourCode="VENDOR_AUTH" message=cp.message!""/>
-        <#elseif cp.code=="invalid_field_data" >
-            <@error ourCode="VENDOR_INVALID_SHIPMENT_IDENTIFIER" message=cp.message!""/>
-        <#else>
-            <@error ourCode="VENDOR_INVALID_RESPONSE" message=cp.message!""/>
-         </#if>  -->
-    
+    <#elseif cp.status != true>
+        <@error ourCode="VENDOR_TRACKING_GENERAL" message=cp.error_msg!""/>
     <#else>
         <#assign shipmentIdentifiers = [{"type":p44.shipmentIdentifier.type, "value":p44.shipmentIdentifier.value}]>
         {
         "responseType": "INGESTION_EVENT",
         "data": [
-        <#list cp as event >
+        <#list cp.tracing_events as event >
             ${event?is_first?string("", ",")}
             <@ingestionEvent
-            scac="MMCV"
+            scac="RTTA"
             statusCode=(event.status)!
             shipmentIdentifiers=(shipmentIdentifiers)!
-            timestamp=removeMilisecundsFromDatetime((event.pickup_date)!"1970-01-01T00:00:00Z")!?datetime("yyyy-MM-dd'T'HH:mm:ss'Z'")?long?c
-            description=(event.statusDescription)!""    <!-- not sure how to map -->
-            city=(event.shipper_info.city)!""
-            <#--  country=(event.shipper_info)!""  -->
-            state=(event.shipper_info.state)!""
-            postalCode=(event.shipper_info.zip)!""
-            estimateTimestamp=removeMilisecundsFromDatetime((event.scheduled_date)!"1970-01-01T00:00:00Z")!?datetime("yyyy-MM-dd'T'HH:mm:ss'Z'")?long?c
-            <#--  lat=(event.shipperLat)!"0"  -->
-            <#--  lon=(event.shipperLong)!"0"  -->
+            timestamp=removeMilisecundsFromDatetime((cp.pickup_date)!"1970-01-01T00:00:00Z")!?datetime("yyyy-MM-dd'T'HH:mm:ss'Z'")?long?c
+            description=(event.comment)!""
+            city=(cp.shipper_info.city)!""
+            state=(cp.shipper_info.state)!""
+            postalCode=(cp.shipper_info.zip)!""
+            estimateTimestamp=removeMilisecundsFromDatetime((cp.scheduled_date)!"1970-01-01T00:00:00Z")!?datetime("yyyy-MM-dd'T'HH:mm:ss'Z'")?long?c
             />
         </#list>
 

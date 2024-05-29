@@ -6,5 +6,3 @@
         <#--  "Authorization":"${"bearer " + p44.vendorAuthentication.credential2}"  -->
     }
 </#compress>
-
-<#--  not sure about this file   -->

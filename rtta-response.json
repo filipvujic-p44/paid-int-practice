@@ -1,0 +1,186 @@
+// 200 OK
+{
+    "status": true,
+    "pro_number": "sample string 1",
+    "bol_number": "sample string 2",
+    "po_number": "sample string 3",
+    "shipper_id": "sample string 4",
+    "pro_total_amt": "sample string 5",
+    "pro_net_amt": "sample string 6",
+    "pickup_date": "sample string 7",
+    "shipper_info": {
+        "code": "sample string 1",
+        "name": "sample string 2",
+        "address_1": "sample string 3",
+        "address_2": "sample string 4",
+        "address_3": "sample string 5",
+        "city": "sample string 6",
+        "state": "sample string 7",
+        "zip": "sample string 8",
+        "contact_list": [
+            {
+                "first_name": "sample string 1",
+                "last_name": "sample string 2",
+                "phone": "sample string 3",
+                "fax": "sample string 4",
+                "email": "sample string 5",
+                "b_shipper": true,
+                "b_consignee": true,
+                "b_bill_to": true,
+                "be_billing": true
+            },
+            {
+                "first_name": "sample string 1",
+                "last_name": "sample string 2",
+                "phone": "sample string 3",
+                "fax": "sample string 4",
+                "email": "sample string 5",
+                "b_shipper": true,
+                "b_consignee": true,
+                "b_bill_to": true,
+                "be_billing": true
+            }
+        ]
+    },
+    "consignee_info": {
+        "code": "sample string 1",
+        "name": "sample string 2",
+        "address_1": "sample string 3",
+        "address_2": "sample string 4",
+        "address_3": "sample string 5",
+        "city": "sample string 6",
+        "state": "sample string 7",
+        "zip": "sample string 8",
+        "contact_list": [
+            {
+                "first_name": "sample string 1",
+                "last_name": "sample string 2",
+                "phone": "sample string 3",
+                "fax": "sample string 4",
+                "email": "sample string 5",
+                "b_shipper": true,
+                "b_consignee": true,
+                "b_bill_to": true,
+                "be_billing": true
+            },
+            {
+                "first_name": "sample string 1",
+                "last_name": "sample string 2",
+                "phone": "sample string 3",
+                "fax": "sample string 4",
+                "email": "sample string 5",
+                "b_shipper": true,
+                "b_consignee": true,
+                "b_bill_to": true,
+                "be_billing": true
+            }
+        ]
+    },
+    "bill_to_info": {
+        "code": "sample string 1",
+        "name": "sample string 2",
+        "address_1": "sample string 3",
+        "address_2": "sample string 4",
+        "address_3": "sample string 5",
+        "city": "sample string 6",
+        "state": "sample string 7",
+        "zip": "sample string 8",
+        "contact_list": [
+            {
+                "first_name": "sample string 1",
+                "last_name": "sample string 2",
+                "phone": "sample string 3",
+                "fax": "sample string 4",
+                "email": "sample string 5",
+                "b_shipper": true,
+                "b_consignee": true,
+                "b_bill_to": true,
+                "be_billing": true
+            },
+            {
+                "first_name": "sample string 1",
+                "last_name": "sample string 2",
+                "phone": "sample string 3",
+                "fax": "sample string 4",
+                "email": "sample string 5",
+                "b_shipper": true,
+                "b_consignee": true,
+                "b_bill_to": true,
+                "be_billing": true
+            }
+        ]
+    },
+    "payment_type": "sample string 8",
+    "shipment_weight": "sample string 9",
+    "scheduled_date": "sample string 10",
+    "fuel_surcharge": "sample string 11",
+    "who_signed": "sample string 12",
+    "tracing_events": [
+        {
+            "status": "sample string 1",
+            "comment": "sample string 2"
+        },
+        {
+            "status": "sample string 1",
+            "comment": "sample string 2"
+        }
+    ],
+    "partner_carriers": [
+        {
+            "scac": "sample string 1",
+            "split": "sample string 2",
+            "type": "sample string 3"
+        },
+        {
+            "scac": "sample string 1",
+            "split": "sample string 2",
+            "type": "sample string 3"
+        }
+    ],
+    "pro_details": [
+        {
+            "sequence": 1,
+            "record_type": "sample string 2",
+            "description": "sample string 3",
+            "freight_class": "sample string 4",
+            "weight": 5,
+            "weight_measure": "sample string 6",
+            "pallet_count": 7,
+            "piece_count": 8,
+            "qty_measure": "sample string 9",
+            "length": 10,
+            "height": 11,
+            "width": 12,
+            "hazmat_un_number": "sample string 13",
+            "hazmat_class": "sample string 14",
+            "hazmat_packing_group": "sample string 15",
+            "hazmat_proper_name": "sample string 16",
+            "charges": 17.0
+        },
+        {
+            "sequence": 1,
+            "record_type": "sample string 2",
+            "description": "sample string 3",
+            "freight_class": "sample string 4",
+            "weight": 5,
+            "weight_measure": "sample string 6",
+            "pallet_count": 7,
+            "piece_count": 8,
+            "qty_measure": "sample string 9",
+            "length": 10,
+            "height": 11,
+            "width": 12,
+            "hazmat_un_number": "sample string 13",
+            "hazmat_class": "sample string 14",
+            "hazmat_packing_group": "sample string 15",
+            "hazmat_proper_name": "sample string 16",
+            "charges": 17.0
+        }
+    ]
+}
+
+// 400 Error
+{
+    "status": false,
+    "error_msg": "Some error occurred"
+}

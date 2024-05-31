@@ -9,10 +9,10 @@
     <#assign p44 = interactionRecords[0].requestBody>
 
     <#function hasContent node>
-	    <#return node?? && node?has_content && node?trim?has_content>
+	    <#return node?? && node?has_content>
     </#function>
 
-    <#if !cp?has_content >
+    <#if !hasContent(cp!) >
         <@error ourCode="VENDOR_INVALID_RESPONSE" message=cp.error_msg!""/>
     <#elseif cp.status != true>
         <@error ourCode="VENDOR_TRACKING_GENERAL" message=cp.error_msg!""/>

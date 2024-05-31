@@ -7,12 +7,12 @@
             <#assign cp = "">
     </#attempt>
     <#assign p44 = interactionRecords[0].requestBody>
-
+    <#assign cpString = interactionRecords[0].vendorResponseBodyString?trim>
     <#function hasContent node>
 	    <#return node?? && node?has_content && node?trim?has_content>
     </#function>
 
-    <#if !cp?has_content || !p44?has_content>
+    <#if !cpString?has_content>
         <@error ourCode="VENDOR_INVALID_RESPONSE" message=""/>
     
     <#elseif cp.status != true>

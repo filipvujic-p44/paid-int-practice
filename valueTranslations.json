@@ -1,26 +1,24 @@
 {
-    "vendorShipmentStatusUpdateCodePrefixMap": {
-      "Quoted": "ARRIVED_AT_TERMINAL",
-      "Canceled": "EXCEPTION",
-      "Booked": "INFO",
-      "Dispatched": "DEPARTED_TERMINAL",
-      "InTransit": "IN_TRANSIT",
-      "Delivered": "DELIVERED",
-      "Loading": "PICKED_UP",
-      "Unloading": "INFO"
-    },
-    "vendorShipmentStatusEventTypePrefixMap": {
-      "Quoted": "INFO",
-      "Canceled": "INFO",
-      "Booked": "INFO",
-      "Dispatched": "INFO",
-      "InTransit": "INFO",
-      "Delivered": "POSITION",
-      "Loading": "INFO",
-      "Unloading": "INFO"
-    },
-    "vendorShipmentStatusStopTypePrefixMap": {
-      "Loading": "ORIGIN",
-      "Delivered": "DESTINATION"
-    }
+  "vendorShipmentStatusUpdateCodePrefixMap": {
+    "Delivered": "DELIVERED",
+    "En-route": "INFO",
+    "Out For Delivery": "OUT_FOR_DELIVERY",
+    "Manifested": "INFO",
+    "Manifested For Delivery": "INFO",
+    "Picked Up": "PICKED_UP",
+    "Pickup Request Received": "INFO"
+  },
+  "vendorShipmentStatusEventTypePrefixMap": {
+    "Delivered": "POSITION",
+    "En-route": "INFO",
+    "Out For Delivery": "POSITION",
+    "Manifested For Delivery": "INFO",
+    "Picked Up": "POSITION",
+    "Pickup Request Received": "INFO"
+  },
+  "vendorShipmentStatusStopTypePrefixMap": {
+    "Delivered": "DESTINATION",
+    "Out For Delivery": "TERMINAL",
+    "Picked Up": "ORIGIN"
   }
+}

@@ -5,15 +5,16 @@
 
     <#attempt>
         <#assign cp = interactionRecords[0].vendorResponseBody>
+        <#assign cpString = interactionRecords[0].vendorResponseBodyString?trim>
         <#recover>
             <#assign cp = "">
     </#attempt>
     <#assign p44 = interactionRecords[0].requestBody>
 
-    <#if !cp?has_content >
+    <#if !cpString?has_content >
         <@error ourCode="VENDOR_INVALID_RESPONSE"/>
     <#elseif cp.error_msg?has_content>
-        <@error ourCode="VENDOR_TRACKING_GENERAL" message= cp.ErrorDescription/>
+        <@error ourCode="VENDOR_TRACKING_GENERAL" message= cp.error_msg/>
     <#else>
         <#assign shipmentIdentifiers = [{"type":p44.shipmentIdentifier.type, "value":p44.shipmentIdentifier.value}]>
             {

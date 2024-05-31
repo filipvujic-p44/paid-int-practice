@@ -12,17 +12,6 @@
 	    <#return node?? && node?has_content && node?trim?has_content>
     </#function>
 
-    <#function removeMilisecundsFromDatetime datetime="1970-01-01T00:00:00Z">
-       <#if hasContent(datetime)>
-            <#if datetime?contains(".")>
-                <#assign dotIndex = datetime?index_of(".")>
-                <#return datetime?substring(0, dotIndex) + 'Z'> 
-            </#if>
-        </#if>
-        <#return datetime>
-    </#function> 
-
-
     <#if !cp?has_content >
         <@error ourCode="VENDOR_INVALID_RESPONSE" message=cp.error_msg!""/>
     <#elseif cp.status != true>
@@ -39,12 +28,10 @@
                     scac="RTTA"
                     statusCode=(event.status)!
                     shipmentIdentifiers=(shipmentIdentifiers)!
-                    timestamp=removeMilisecundsFromDatetime((cp.pickup_date)!"1970-01-01T00:00:00Z")!?datetime("yyyy-MM-dd'T'HH:mm:ss'Z'")?long?c
                     description=(event.comment)!""
                     city=(cp.shipper_info.city)!""
                     state=(cp.shipper_info.state)!""
                     postalCode=(cp.shipper_info.zip)!""
-                    estimateTimestamp=removeMilisecundsFromDatetime((cp.scheduled_date)!"1970-01-01T00:00:00Z")!?datetime("yyyy-MM-dd'T'HH:mm:ss'Z'")?long?c
                     />
                 </#list>
 

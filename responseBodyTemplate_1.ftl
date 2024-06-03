@@ -6,6 +6,19 @@
 	<#assign cp0 = "">
 	<#assign cp0String = "">
 </#attempt>
+
+<#if !cp0String.has_content>
+{
+	"shipmentIdentifiers": [],
+	"shipmentConfirmationDetail":{},
+	"infoMessages": [],
+	"warningMessages": [],
+	"errorMessages": [{
+		"ourCode": "VENDOR_DISPATCH_GENERAL",
+		"message": "Error processing first interaction."
+	}]
+}
+<#else>
 {
 	"shipmentIdentifiers": [],
 	"shipmentConfirmationDetail":{},
@@ -16,4 +29,5 @@
 		"message": "Error processing 2nd interaction."
 	}]
 }
+</#if>
 </#compress>

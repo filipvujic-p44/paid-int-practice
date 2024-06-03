@@ -1,0 +1,20 @@
+[
+    {
+        "status": true,
+        "origin_zip": "sample string 2",
+        "destination_zip": "sample string 3",
+        "pickup_date": "sample string 4",
+        "transit_days": 6
+    },
+
+    {
+        "status": true,
+        "shipment_id": "153616346"
+    },
+    
+    {
+        "status": false,
+        "error_msg": "Some error occurred"
+    }
+    
+]

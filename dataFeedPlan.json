@@ -18,7 +18,7 @@
             "metaData": {
                 "connectionType": "REST",
                 "encryptionProtocol": null,
-                "httpMethod": "POST",
+                "httpMethod": "GET",
                 "httpClientVersion": null,
                 "httpStatusesToIgnore": [],
                 "contentType": "JSON",
@@ -53,7 +53,50 @@
             },
             "direction": "BOTH",
             "httpRedirectPolicy": "NORMAL"
+        },
+        {
+            "sequence": 2,
+            "metaData": {
+                "connectionType": "REST",
+                "encryptionProtocol": null,
+                "httpMethod": "POST",
+                "httpClientVersion": null,
+                "httpStatusesToIgnore": [],
+                "contentType": "JSON",
+                "paginationRequired": false,
+                "responseSchema": null,
+                "rootNodeName": null,
+                "uriTemplate": {
+                    "templateName": "uriTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "headerTemplate": {
+                    "templateName": "headerTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "requestBodyTemplate": {
+                    "templateName": "requestBodyTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "responseBodyTemplate": {
+                    "templateName": "responseBodyTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "controlTemplate": {
+                    "templateName": "controlTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                }
+            },
+            "direction": "BOTH",
+            "httpRedirectPolicy": "NORMAL"
         }
     ],
+    "dataProviderTenantUuid": null,
+    "dataProviderTenantId": 0,
     "planSupported": true
 }

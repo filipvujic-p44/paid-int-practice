@@ -14,13 +14,14 @@
             "sequence": 1,
             "metaData": {
                 "connectionType": "REST",
-                "httpMethod": "POST",
+                "encryptionProtocol": null,
+                "httpMethod": "GET",
+                "httpClientVersion": null,
+                "httpStatusesToIgnore": [],
                 "contentType": "JSON",
-                "controlTemplate": {
-                    "templateName": "controlTemplate_1.ftl",
-                    "templateValue": null,
-                    "realizedTemplate": null
-                },
+                "paginationRequired": false,
+                "responseSchema": null,
+                "rootNodeName": null,
                 "uriTemplate": {
                     "templateName": "uriTemplate_1.ftl",
                     "templateValue": null,
@@ -38,6 +39,45 @@
                 },
                 "responseBodyTemplate": {
                     "templateName": "responseBodyTemplate_1.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "controlTemplate": {
+                    "templateName": "controlTemplate_1.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                }
+            },
+            "direction": "BOTH"
+        },
+        {
+            "sequence": 2,
+            "metaData": {
+                "connectionType": "REST",
+                "httpMethod": "POST",
+                "contentType": "JSON",
+                "controlTemplate": {
+                    "templateName": "controlTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "uriTemplate": {
+                    "templateName": "uriTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "headerTemplate": {
+                    "templateName": "headerTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "requestBodyTemplate": {
+                    "templateName": "requestBodyTemplate_2.ftl",
+                    "templateValue": null,
+                    "realizedTemplate": null
+                },
+                "responseBodyTemplate": {
+                    "templateName": "responseBodyTemplate_2.ftl",
                     "templateValue": null,
                     "realizedTemplate": null
                 }

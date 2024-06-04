@@ -61,10 +61,46 @@
 				"value": "${(cp2.shipment_id)!}"
 			}
 		],
-		"shipmentConfirmationDetail":{},
+		"shipmentConfirmationDetail":{
+			"originLocation":{
+					"address":{
+						"addressLines": [],
+						"city": null,
+						"state": null,
+						"postalCode": ${cp1.origin_zip},
+						"country": null
+					},
+					"contact":{
+						"companyName": null,
+						"contactName": null,
+						"email": null,
+						"phoneNumber": null,
+						"phoneNumber2": null,
+						"faxNumber": null
+					},
+					"destinationLocation":{
+					"address":{
+						"addressLines": [],
+						"city": null,
+						"state": null,
+						"postalCode": ${cp1.destination_zip},,
+						"country": null
+					},
+					"contact":{
+						"companyName": null,
+						"contactName": null,
+						"email": null,
+						"phoneNumber": null,
+						"phoneNumber2": null,
+						"faxNumber": null
+					}
+				},
+				"transitDays": ${fetchedTransitTime!}
+		},
 		"infoMessages": [],
 		"warningMessages": [],
 		"errorMessages": []
+		}
 	}
 </#if>
 

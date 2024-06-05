@@ -1,27 +1,30 @@
 <#compress>
 <#setting number_format="computer">
 
-<#attempt >
-    <#assign cp = interactionRecords[0].vendorResponseBody>
-	<#assign cpString = interactionRecords[0].vendorResponseBodyString>
-    <#recover >
-        <#assign cp = "">
-		<#assign cpString = "">
+<#attempt>
+	<#assign cp1 = interactionRecords[0].vendorResponseBody>
+	<#assign cp1String = interactionRecords[0].vendorResponseBodyString>
+	<#assign fetchedTransitTime = (cp1.TransitDays)!>
+<#recover>
+	<#assign cp1 = "">
+	<#assign fetchedTransitTime = "">
 </#attempt>
 
 <#attempt>
-	<#assign cpStatus = interactionRecords[0].vendorResponseHttpStatus>
+	<#assign cp2 = interactionRecords[1].vendorResponseBody>
+	<#assign cp2String = interactionRecords[1].vendorResponseBodyString>
 <#recover>
-	<#assign cpStatus = "">
+	<#assign cp2 = "">
 </#attempt>
 
 <#function hasContent node>
 	<#return node?? && node?has_content && node?trim?has_content>
 </#function>
 
-
 <#if !hasContent(cpString)>
 	{
+		"shipmentIdentifiers": [],
+		"shipmentConfirmationDetail": {},
 		"infoMessages": [],
 		"warningMessages": [],
 		"errorMessages": [{
@@ -31,7 +34,8 @@
 	}
 <#elseif (cp.status)! != true>
 	{
-		"rateQuotes": [],
+		"shipmentIdentifiers": [],
+		"shipmentConfirmationDetail": {},
 		"infoMessages": [],
 		"warningMessages": [],
 		"errorMessages": [{
@@ -44,7 +48,7 @@
 	"shipmentIdentifiers": [
 		{
 			"type": "CUSTOMER_REFERENCE",
-			"value": "${(cp.shipment_id)!}"
+			"value": "${(cp1.shipment_id)!}"
 		}
 	],
 	"shipmentConfirmationDetail": {
@@ -56,7 +60,7 @@
 				],
 				"city": "",
 				"state": "",
-				"postalCode": "",
+				"postalCode": "${cp1.origin_zip}",
 				"country": ""
 			},
 			"contact":{
@@ -72,7 +76,7 @@
 				],
 				"city": "",
 				"state": "",
-				"postalCode": "",
+				"postalCode": "${cp1.destination_zip}",
 				"country": ""
 			},
 			"contact":{
@@ -87,7 +91,8 @@
 			"contact": {}
 		},
 		"serviceLevel": {},
-		"appliedQuote": {}
+		"appliedQuote": {},
+		"transitDays": ${fetchedTransitTime!}
 	},
 	"infoMessages": [],
 	"warningMessages": [],

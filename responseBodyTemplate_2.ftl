@@ -53,8 +53,8 @@
 	],
 	"shipmentConfirmationDetail": {
 		"pickupWindow": {},
-		"originLocation":{
-			"address":{
+		"originLocation": {
+			"address": {
 				"addressLines": [
 					""
 				],
@@ -63,14 +63,14 @@
 				"postalCode": "${cp1.origin_zip}",
 				"country": ""
 			},
-			"contact":{
+			"contact": {
 				"contactName": "",
 				"phoneNumber": ""
 			}
 		},
 		"originTerminal": {},
-		"destinationLocation":{
-			"address":{
+		"destinationLocation": {
+			"address": {
 				"addressLines": [
 					""
 				],
@@ -79,7 +79,7 @@
 				"postalCode": "${cp1.destination_zip}",
 				"country": ""
 			},
-			"contact":{
+			"contact": {
 				"contactName": "",
 				"phoneNumber": ""
 			} 

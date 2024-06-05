@@ -1,0 +1,28 @@
+// first interaction
+// 200 OK
+{
+    "status": true,
+    "shipment_id": "153616346"
+}
+
+// 400 Error
+{
+    "status": false,
+    "error_msg": "Some error occurred"
+}
+
+// second interaction
+// 200 OK
+{
+    "status": true,
+    "origin_zip": "sample string 2",
+    "destination_zip": "sample string 3",
+    "pickup_date": "sample string 4",
+    "transit_days": 6
+}
+
+// 400 Error
+{
+    "status": false,
+    "error_msg": "Some error occurred"
+}

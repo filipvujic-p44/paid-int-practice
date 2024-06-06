@@ -7,7 +7,7 @@
 	<#assign cp0String = "">
 </#attempt>
 
-<#if !cp0String.has_content>
+<#if !cp0String?has_content>
 {
 	"shipmentIdentifiers": [],
 	"shipmentConfirmationDetail":{},

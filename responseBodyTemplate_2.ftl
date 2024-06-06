@@ -21,7 +21,7 @@
 	<#return node?? && node?has_content && node?trim?has_content>
 </#function>
 
-<#if !hasContent(cpString)>
+<#if !hasContent(cp1String) || !hasContent(cp2String)>
 	{
 		"shipmentIdentifiers": [],
 		"shipmentConfirmationDetail": {},
@@ -32,7 +32,7 @@
 			"message": ""
 		}]
 	}
-<#elseif (cp.status)! != true>
+<#elseif cp2.status != true>
 	{
 		"shipmentIdentifiers": [],
 		"shipmentConfirmationDetail": {},
@@ -40,7 +40,7 @@
 		"warningMessages": [],
 		"errorMessages": [{
 			"ourCode": "VENDOR_DISPATCH_GENERAL",
-			"message": "${(cp.error_msg)!}"
+			"message": "${(cp2.error_msg)!}"
 		}]
 	}
 <#else>
@@ -48,7 +48,7 @@
 	"shipmentIdentifiers": [
 		{
 			"type": "CUSTOMER_REFERENCE",
-			"value": "${(cp1.shipment_id)!}"
+			"value": "${(cp2.shipment_id)!}"
 		}
 	],
 	"shipmentConfirmationDetail": {

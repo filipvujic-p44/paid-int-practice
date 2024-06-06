@@ -3,7 +3,7 @@
 <#attempt>
 	<#assign cp1 = interactionRecords[0].vendorResponseBody>
 	<#assign cp1String = interactionRecords[0].vendorResponseBodyString>
-	<#assign fetchedTransitTime = cp1.TransitDays>
+	<#assign fetchedTransitTime = cp1.transit_days>
 <#recover>
 	<#assign cp1 = "">
 	<#assign fetchedTransitTime = "">
@@ -17,14 +17,6 @@
 
 <#function hasContent node>
 	<#return node?? && node?has_content && node?trim?has_content>
-</#function>
-
-<#function parseTimeFormat node>
-	<#if node?trim?has_content>
-		<#return node?trim + ":00">
-	<#else>
-		<#return "">
-	</#if>
 </#function>
 
 <#if !cp2?has_content || !hasContent(cp2String)>
@@ -61,13 +53,13 @@
 				"value": "${(cp2.shipment_id)!}"
 			}
 		],
-		"shipmentConfirmationDetail":{
+		"shipmentConfirmationDetail":[{
 			"originLocation":{
 					"address":{
 						"addressLines": [],
 						"city": null,
 						"state": null,
-						"postalCode": ${cp1.origin_zip},
+						"postalCode": ${(cp1.origin_zip)!},
 						"country": null
 					},
 					"contact":{
@@ -79,28 +71,28 @@
 						"faxNumber": null
 					},
 					"destinationLocation":{
-					"address":{
-						"addressLines": [],
-						"city": null,
-						"state": null,
-						"postalCode": ${cp1.destination_zip},,
-						"country": null
+						"address":{
+							"addressLines": [],
+							"city": null,
+							"state": null,
+							"postalCode": ${(cp1.destination_zip)!},
+							"country": null
+						},
+						"contact":{
+							"companyName": null,
+							"contactName": null,
+							"email": null,
+							"phoneNumber": null,
+							"phoneNumber2": null,
+							"faxNumber": null
+						}
 					},
-					"contact":{
-						"companyName": null,
-						"contactName": null,
-						"email": null,
-						"phoneNumber": null,
-						"phoneNumber2": null,
-						"faxNumber": null
-					}
-				},
-				"transitDays": ${fetchedTransitTime!}
-		},
-		"infoMessages": [],
-		"warningMessages": [],
-		"errorMessages": []
-		}
+					"transitDays": ${fetchedTransitTime!}
+			}
+	}],
+	"infoMessages": [],
+	"warningMessages": [],
+	"errorMessages": []
 	}
 </#if>
 

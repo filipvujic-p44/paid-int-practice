@@ -4,10 +4,8 @@
 <#attempt>
 	<#assign cp1 = interactionRecords[0].vendorResponseBody>
 	<#assign cp1String = interactionRecords[0].vendorResponseBodyString>
-	<#assign fetchedTransitTime = (cp1.TransitDays)!>
 <#recover>
 	<#assign cp1 = "">
-	<#assign fetchedTransitTime = "">
 </#attempt>
 
 <#attempt>
@@ -21,7 +19,7 @@
 	<#return node?? && node?has_content && node?trim?has_content>
 </#function>
 
-<#if !hasContent(cp1String) || !hasContent(cp2String)>
+<#if !(cp2String?has_content)>
 	{
 		"shipmentIdentifiers": [],
 		"shipmentConfirmationDetail": {},
@@ -44,59 +42,54 @@
 		}]
 	}
 <#else>
-{  
+{
 	"shipmentIdentifiers": [
-		{
-			"type": "CUSTOMER_REFERENCE",
-			"value": "${(cp2.shipment_id)!}"
-		}
-	],
-	"shipmentConfirmationDetail": {
-		"pickupWindow": {},
-		"originLocation": {
-			"address": {
-				"addressLines": [
-					""
-				],
-				"city": "",
-				"state": "",
-				"postalCode": "${cp1.origin_zip}",
-				"country": ""
-			},
-			"contact": {
-				"contactName": "",
-				"phoneNumber": ""
-			}
-		},
-		"originTerminal": {},
-		"destinationLocation": {
-			"address": {
-				"addressLines": [
-					""
-				],
-				"city": "",
-				"state": "",
-				"postalCode": "${cp1.destination_zip}",
-				"country": ""
-			},
-			"contact": {
-				"contactName": "",
-				"phoneNumber": ""
-			} 
-		},
-		"billToLocation": {
-			"address": {
-			"addressLines": []
-			},
-			"contact": {}
-		},
-		"serviceLevel": {},
-		"appliedQuote": {},
-		"transitDays": ${fetchedTransitTime!}
-	},
-	"infoMessages": [],
-	"warningMessages": [],
-	"errorMessages": []
+        {
+            "type": "CUSTOMER_REFERENCE",
+            "value": "${(cp2.shipment_id)!}"
+        }
+    ],
+    "shipmentConfirmationDetail":{
+        "originLocation":{
+            "address":{
+                "addressLines": [],
+                "city": null,
+                "state": null,
+                "postalCode": "${(cp1.origin_zip)!}",
+                "country": null
+            },
+            "contact":{
+                "companyName": null,
+                "contactName": null,
+                "email": null,
+                "phoneNumber": null,
+                "phoneNumber2": null,
+                "faxNumber": null
+            },
+            "destinationLocation":{
+                "address":{
+                    "addressLines": [],
+                    "city": null,
+                    "state": null,
+                    "postalCode": "${(cp1.destination_zip)!}",
+                    "country": null
+                },
+                "contact":{
+                    "companyName": null,
+                    "contactName": null,
+                    "email": null,
+                    "phoneNumber": null,
+                    "phoneNumber2": null,
+                    "faxNumber": null
+                }
+            },
+            "transitDays": "${(cp1.transit_days)!0}"
+            
+        }
+    },
+    "infoMessages": [],
+    "warningMessages": [],
+    "errorMessages": []
 }
 </#if>
 </#compress>

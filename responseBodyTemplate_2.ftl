@@ -46,54 +46,55 @@
 	}
 
 <#else>
-	{
-		"shipmentIdentifiers": [
-			{
-				"type": "CUSTOMER_REFERENCE",
-				"value": "${(cp2.shipment_id)!}"
-			}
-		],
-		"shipmentConfirmationDetail":[{
-			"originLocation":{
-					"address":{
-						"addressLines": [],
-						"city": null,
-						"state": null,
-						"postalCode": ${(cp1.origin_zip)!},
-						"country": null
-					},
-					"contact":{
-						"companyName": null,
-						"contactName": null,
-						"email": null,
-						"phoneNumber": null,
-						"phoneNumber2": null,
-						"faxNumber": null
-					},
-					"destinationLocation":{
-						"address":{
-							"addressLines": [],
-							"city": null,
-							"state": null,
-							"postalCode": ${(cp1.destination_zip)!},
-							"country": null
-						},
-						"contact":{
-							"companyName": null,
-							"contactName": null,
-							"email": null,
-							"phoneNumber": null,
-							"phoneNumber2": null,
-							"faxNumber": null
-						}
-					},
-					"transitDays": ${fetchedTransitTime!}
-			}
-	}],
-	"infoMessages": [],
-	"warningMessages": [],
-	"errorMessages": []
-	}
+{  
+    "shipmentIdentifiers": [
+        {
+            "type": "CUSTOMER_REFERENCE",
+            "value": "${(cp1.shipment_id)!}"
+        }
+    ],
+    "shipmentConfirmationDetail":{
+        "originLocation":{
+            "address":{
+                "addressLines": [],
+                "city": null,
+                "state": null,
+                "postalCode": "${(cp0.origin_zip)!}",
+                "country": null
+            },
+            "contact":{
+                "companyName": null,
+                "contactName": null,
+                "email": null,
+                "phoneNumber": null,
+                "phoneNumber2": null,
+                "faxNumber": null
+            },
+            "destinationLocation":{
+                "address":{
+                    "addressLines": [],
+                    "city": null,
+                    "state": null,
+                    "postalCode": "${(cp0.destination_zip)!}",
+                    "country": null
+                },
+                "contact":{
+                    "companyName": null,
+                    "contactName": null,
+                    "email": null,
+                    "phoneNumber": null,
+                    "phoneNumber2": null,
+                    "faxNumber": null
+                }
+            },
+            "transitDays": "${(cp0.transit_days)!}"
+            
+        }
+    },
+    "infoMessages": [],
+    "warningMessages": [],
+    "errorMessages": []
+}
 </#if>
 
 </#compress>

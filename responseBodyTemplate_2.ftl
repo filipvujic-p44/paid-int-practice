@@ -22,7 +22,7 @@
 </#function>
 
 
-<#if !cp1String?has_content || !cp0String?has_content>
+<#if !cp1String?has_content>
 	{
 		"infoMessages": [],
 		"warningMessages": [],
@@ -41,16 +41,7 @@
 			"message": "${(cp1.error_msg)!}"
 		}]
 	}
-<#elseif cp0.status != true >
-	{
-		"rateQuotes": [],
-		"infoMessages": [],
-		"warningMessages": [],
-		"errorMessages": [{
-			"ourCode": "VENDOR_DISPATCH_GENERAL",
-			"message": "${(cp0.error_msg)!}"
-		}]
-	}
+
 <#else>
 {  
 	"shipmentIdentifiers": [
@@ -93,7 +84,7 @@
 					"faxNumber": null
 				}
 			},
-			"transitDays": "${(cp0.transit_days)!}"
+			"transitDays": "${(cp0.transit_days)!0}"
 			
 		}
 	},

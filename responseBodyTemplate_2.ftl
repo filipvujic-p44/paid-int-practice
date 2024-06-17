@@ -19,7 +19,7 @@
 	<#return node?? && node?has_content && node?trim?has_content>
 </#function>
 
-<#if !(cp2String?has_content) || !(cp1String?has_content)>
+<#if !(cp2String?has_content)>
 	{
 		"shipmentIdentifiers": [],
 		"shipmentConfirmationDetail": {},
@@ -45,7 +45,7 @@
 {
 	"shipmentIdentifiers": [
         {
-            "type": "CUSTOMER_REFERENCE",
+            "type": "PICKUP",
             "value": "${(cp2.shipment_id)!}"
         }
     ],

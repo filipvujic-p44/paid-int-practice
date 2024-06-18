@@ -6,26 +6,14 @@
     <#return node?? && node?has_content && node?trim?has_content && node!=null>
 </#function>
 
-<#--  Resolve phone number value from contact info  -->
 <#function buildPhoneNumber phoneNumberObject phoneNumberString>
-    <#--  If phoneNumber2 exists, return that value  -->
     <#if phoneNumberString?has_content>
         <#return phoneNumberString>
     </#if>
-    <#--  Try to build a string from phoneNumber json node  -->
     <#if phoneNumberObject?has_content && phoneNumberObject.areaCode?has_content && phoneNumberObject.centralOfficeCode?has_content && phoneNumberObject.stationCode?has_content>
         <#return phoneNumberObject.areaCode + "-" + phoneNumberObject.centralOfficeCode + "-" + phoneNumberObject.stationCode>
     <#else>
         <#return "">
-    </#if>
-</#function>
-
-<#function resolvePaymentTerms paymentTerms>
-    <#if paymentTerms?has_content && paymentTerms?lower_case == "collect" || paymentTerms?lower_case == "c">
-        <#return "COL">
-    <#--  If paymentTerms has no content, return PPD  -->
-    <#else>
-        <#return "PPD">
     </#if>
 </#function>
 
@@ -37,7 +25,6 @@
     </#if>
 </#function>
 
-<#--  MAPPING  -->
 <#list p44.shipmentIdentifiers as identifier>
     <#if identifier.type == "BILL_OF_LADING">
         <#assign bol = identifier.value>

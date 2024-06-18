@@ -3,10 +3,8 @@
 <#attempt>
 	<#assign cp1 = interactionRecords[0].vendorResponseBody>
 	<#assign cp1String = interactionRecords[0].vendorResponseBodyString>
-	<#assign fetchedTransitTime = cp1.transit_days>
 <#recover>
 	<#assign cp1 = "">
-	<#assign fetchedTransitTime = "">
 </#attempt>
 <#attempt>
 	<#assign cp2 = interactionRecords[1].vendorResponseBody>
@@ -19,7 +17,7 @@
 	<#return node?? && node?has_content && node?trim?has_content>
 </#function>
 
-<#if !cp2?has_content || !hasContent(cp2String)>
+<#if !cp2String?has_content>
 	{
 		"shipmentIdentifiers": [],
 		"shipmentConfirmationDetail":{},
@@ -32,7 +30,7 @@
 		]
 	}
 
-<#elseif hasContent(cp2.error_msg!)>
+<#elseif cp2.status != true>
 	{
 		"shipmentIdentifiers": [],
 		"shipmentConfirmationDetail":{},
@@ -49,8 +47,8 @@
 {  
     "shipmentIdentifiers": [
         {
-            "type": "CUSTOMER_REFERENCE",
-            "value": "${(cp1.shipment_id)!}"
+            "type": "PICKUP",
+            "value": "${(cp2.shipment_id)!}"
         }
     ],
     "shipmentConfirmationDetail":{
@@ -59,7 +57,7 @@
                 "addressLines": [],
                 "city": null,
                 "state": null,
-                "postalCode": "${(cp0.origin_zip)!}",
+                "postalCode": "${(cp1.origin_zip)!}",
                 "country": null
             },
             "contact":{
@@ -75,7 +73,7 @@
                     "addressLines": [],
                     "city": null,
                     "state": null,
-                    "postalCode": "${(cp0.destination_zip)!}",
+                    "postalCode": "${(cp1.destination_zip)!}",
                     "country": null
                 },
                 "contact":{
@@ -87,7 +85,7 @@
                     "faxNumber": null
                 }
             },
-            "transitDays": "${(cp0.transit_days)!}"
+            "transitDays": "${(cp1.transit_days)!0}"
             
         }
     },
